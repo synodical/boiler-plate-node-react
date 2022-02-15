@@ -17,7 +17,11 @@ mongoose.connect(config.mongoURI, {
 }).then(() => console.log('MongoDB is connected...'))
     .catch(err => console.log(err))
 
-app.get('/', (req, res) => res.send('Hello world gg'));
+app.get('/', (req, res) => res.send('Hello world~~'));
+
+app.get('/api/hello', (req, res) => {
+    res.send("안녕하세요~~~ 여기는 콘솔");
+})
 
 app.post('/api/users/register', (req, res) => {
     const user = new User(req.body);  // 상단에서 require로 가져온 User 스키마에 req.body를 담아 user라는 인스턴스로 만든다.
